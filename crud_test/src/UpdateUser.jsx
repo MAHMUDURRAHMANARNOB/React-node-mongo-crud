@@ -12,8 +12,8 @@ function UpdateUser(){
     useEffect(()=>{
         axios.get('http://localhost:3001/getUser/'+id)
         .then(result => {
-            setName(result.data.name)
-            setEmail(result.data.email)
+            setName(result.data.username)
+            setEmail(result.data.usermail)
             setAge(result.data.age)
         })
         .catch(err=> console.log(err))
@@ -54,7 +54,7 @@ function UpdateUser(){
                     <div className="mb-2">
                         <label htmlFor=""> Email </label>
                         <input type="text" placeholder="Enter Email" className="form-control"
-                        value={email}
+                        value = {email}
                         onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="mb-2">
